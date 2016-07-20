@@ -1,0 +1,42 @@
+#!/bin/tcsh
+
+python precip_forecast_ccpa_2netcdf.py 120 132
+python precip_forecast_ccpa_2netcdf.py 132 144
+python precip_forecast_ccpa_2netcdf.py 144 156
+python precip_forecast_ccpa_2netcdf.py 156 168
+python precip_forecast_ccpa_2netcdf.py 168 180
+python precip_forecast_ccpa_2netcdf.py 180 192
+
+# every 24 h
+
+python precip_forecast_ccpa_2netcdf.py 000 024
+python precip_forecast_ccpa_2netcdf.py 012 036
+python precip_forecast_ccpa_2netcdf.py 024 048
+python precip_forecast_ccpa_2netcdf.py 036 060
+python precip_forecast_ccpa_2netcdf.py 048 072
+python precip_forecast_ccpa_2netcdf.py 060 084
+python precip_forecast_ccpa_2netcdf.py 072 096
+python precip_forecast_ccpa_2netcdf.py 084 108
+python precip_forecast_ccpa_2netcdf.py 096 120
+python precip_forecast_ccpa_2netcdf.py 108 132
+python precip_forecast_ccpa_2netcdf.py 120 144
+python precip_forecast_ccpa_2netcdf.py 132 156
+python precip_forecast_ccpa_2netcdf.py 144 168
+python precip_forecast_ccpa_2netcdf.py 156 180
+python precip_forecast_ccpa_2netcdf.py 168 192
+
+# every 48 h
+
+python precip_forecast_ccpa_2netcdf.py 000 048
+python precip_forecast_ccpa_2netcdf.py 024 072
+python precip_forecast_ccpa_2netcdf.py 048 096
+python precip_forecast_ccpa_2netcdf.py 072 120
+python precip_forecast_ccpa_2netcdf.py 096 144
+
+
+
+
+
+
+
+

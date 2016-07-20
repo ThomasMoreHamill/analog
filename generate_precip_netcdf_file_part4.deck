@@ -1,0 +1,10 @@
+#!/bin/tcsh
+
+# specials 
+
+python precip_forecast_ccpa_2netcdf.py 000 168
+python precip_forecast_ccpa_2netcdf.py 120 240
+python precip_forecast_ccpa_2netcdf.py 168 336
+python precip_forecast_ccpa_2netcdf.py 192 360
+python precip_forecast_ccpa_2netcdf.py 144 240
+python precip_forecast_ccpa_2netcdf.py 168 264

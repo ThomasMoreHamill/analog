@@ -1,0 +1,29 @@
+#!/bin/tcsh
+
+# two day accumulations continued
+
+python precip_forecast_ccpa_2netcdf.py 120 168
+python precip_forecast_ccpa_2netcdf.py 144 192
+python precip_forecast_ccpa_2netcdf.py 168 216
+python precip_forecast_ccpa_2netcdf.py 192 240
+
+# every 72 h 
+
+python precip_forecast_ccpa_2netcdf.py 000 072
+python precip_forecast_ccpa_2netcdf.py 024 096
+python precip_forecast_ccpa_2netcdf.py 048 120
+python precip_forecast_ccpa_2netcdf.py 072 144
+python precip_forecast_ccpa_2netcdf.py 096 168
+python precip_forecast_ccpa_2netcdf.py 120 192
+python precip_forecast_ccpa_2netcdf.py 144 216
+python precip_forecast_ccpa_2netcdf.py 168 240
+
+
+
+
+
+
+
+
+
+

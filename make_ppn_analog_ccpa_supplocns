@@ -1,0 +1,30 @@
+#  makefile routine for macintosh computers
+#  usage: > make -f make_ppn_analog_ccpa_supplons
+#  note: assumes you have HDF5, netCDF libraries installed.
+#  also, paths to your particular libraries and include directories may be different. 
+
+# ---- uncomment these if using ifort compiler
+#FFLAGS77 = -O4 -c
+#FFLAGS   = -O4 -check all -Wl,-stack_size,0x10000000 
+#FFLAGSC   = -O4 -c
+##FFLAGS77 = -O0 -c
+##FFLAGS   = -O0 -check all -fp-stack-check -fstack-protector-all -ftrapuv -Wl,-stack_size,0x10000000 
+##FFLAGSC   = -O0 -c
+#FC = /usr/bin/ifort
+#LIB = -L/usr/local/ifort/lib
+#INC = -I/usr/local/ifort/include
+
+# ---- use these compiler options on mac with gfortran compiler
+
+FFLAGS77 = -c -C -O4 -fcheck=all
+FFLAGS   = -C -O4 -fbounds-check -fbacktrace
+FFLAGSC   = -c -C -O4
+FC = gfortran
+LIB = -L/opt/local/lib -L/usr/local/gfortran/lib
+INC2 = -I/usr/local/gfortran/include
+INC = -I/opt/local/include
+
+
+all: 
+	$(FC) $(FFLAGS77) ran3.f mpinv.f convlv.f realft.f twofft.f four1.f drotg.f dnrm2.f dswap.f dscal.f ddot.f daxpy.f drot.f dsvdc.f 
+	$(FC) $(FFLAGS)  $(INC) $(INC2) -o ppn_analog_ccpa_supplocns.x ppn_analog_ccpa_supplocns.f90 check.f90 load_precipfcst_and_ccpa.f90 probfcst_relfreq.f90 ran3.o RANK.f compute_quantiles_ccpa2.f90 sort2.f90 heapsort.f90 list_to_nearest_fcstgridpt.f90 write_ccpa_analogs_tofile_direct2.f90 read_ccpa_analogs_fromfile_direct2.f90 compute_all_climatologies_ccpa2.f90 barnes_like.f90 calculate_reliabilities_supp.f90 relia_bss_analog_ccpa.f90 analog_forecast_supp_v2.f90 R_rnkpar.f90 read_precip_analog_locations_ccpa5.f90 determine_nearest_nint.f90  interpolate_training_data.f90 sgolay_2d_weights.f90 raw_vs_smoothed_weight.f90 sgolay_smooth.f90 mpinv.o interpolate_weights.f90 convlv.o realft.o twofft.o four1.o drotg.o dnrm2.o dswap.o dscal.o ddot.o daxpy.o drot.o dsvdc.o $(LIB) $(LIB2) -lnetcdf -lhdf5 -lhdf5_hl -lnetcdff

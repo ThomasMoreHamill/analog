@@ -1,0 +1,25 @@
+# ---- makefile for ppn_rawens_ccpa.x
+
+# suggested compiler options for ifort on mac; library locations likely to be specific to your own system.
+
+#FFLAGS77 = -O4 -c
+#FFLAGS   = -O4 -Wl,-stack_size,0x10000000 
+#FFLAGSC   = -O4 -c
+#FC = /usr/bin/ifort
+#LIB = -L/usr/local/ifort/lib
+#LIB2 = -L/opt/local/lib
+#INC = -I/usr/local/ifort/include
+#INC2 = -I/opt/local/include
+
+# --- compiler options for gfortran mac
+
+FFLAGS77 = -c -C -O4 -m64
+FFLAGS   = -C -O4 -m64
+FFLAGSC   = -c -C -O4 -m64
+FC = gfortran
+LIB = -L/opt/local/lib -L/usr/local/gfortran/lib
+INC2 = -I/usr/local/gfortran/include
+INC = -I/opt/local/include
+
+all: 
+	$(FC) $(FFLAGS)  $(INC) $(INC2) -o ppn_rawens_ccpa.x ppn_rawens_ccpa.f90 check.f90 load_precipfcst_and_ccpa.f90 probfcst_relfreq.f90  compute_quantiles_ccpa2.f90 list_to_nearest_fcstgridpt.f90 write_ccpa_analogs_tofile_direct2.f90 read_ccpa_analogs_fromfile_direct2.f90 heapsort.f90 compute_all_climatologies_ccpa2.f90 calculate_reliabilities_rawens.f90 relia_bss_analog_ccpa.f90 direct_forecast.f90 $(LIB) -lnetcdf -lhdf5 -lhdf5_hl -lnetcdff

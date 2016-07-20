@@ -1,0 +1,12 @@
+#!/bin/tcsh
+
+ppn_rawens_ccpa.x 012 024 Y
+ppn_rawens_ccpa.x 036 048 Y
+ppn_rawens_ccpa.x 060 072 Y
+ppn_rawens_ccpa.x 084 096 Y
+ppn_rawens_ccpa.x 108 120 Y
+ppn_rawens_ccpa.x 132 144 Y
+ppn_rawens_ccpa.x 156 168 Y
+ppn_rawens_ccpa.x 180 192 Y
+
+

@@ -1,0 +1,22 @@
+
+#FFLAGS77 = -c
+#FFLAGS   = -check all
+#FFLAGSC   = -c
+#FC = /usr/bin/ifort
+#LIB = -L/usr/local/ifort/lib
+#INC = -I/usr/local/ifort/include
+
+
+FFLAGS77 = -c -C -O4 -fcheck=all
+FFLAGS   = -C -O4 -Waliasing -Wampersand -Wconversion -Wsurprising -Wc-binding-type -Wintrinsics-std -Wintrinsic-shadow -Wline-truncation -Wtarget-lifetime -Wreal-q-constant -Wunused -fbounds-check -fbacktrace
+FFLAGSC   = -c -C -O4 -Waliasing -Wampersand -Wconversion -Wsurprising -Wc-binding-type -Wintrinsics-std -Wintrinsic-shadow -Wline-truncation -Wtarget-lifetime -Wreal-q-constant -Wunused -fbounds-check -fbacktrace
+
+FC = gfortran
+LIB = -L/opt/local/lib -L/usr/local/gfortran/lib
+INC2 = -I/usr/local/gfortran/include
+INC = -I/opt/local/include
+
+
+
+all: 
+	$(FC) $(FFLAGS) $(INC) $(INC2) -o compute_precip_analog_locations_ccpa5.x compute_precip_analog_locations_ccpa5.f90 check.f90 load_precipquantiles_ccpa_analonly.f90  $(LIB) -lnetcdf -lhdf5 -lhdf5_hl -lnetcdff
